@@ -2,6 +2,16 @@
 
 This document will list some of the [Session videos from WWDC 24](https://developer.apple.com/videos/wwdc2024) ([youtube alternative to videos](https://www.youtube.com/@AppleDeveloper/videos)) and our own summary and comment if it is a good watch, or what ever note we'd like to add.
 
+## Catch up on accessibility in SwiftUI
+[Catch up on accessibility in SwiftUI](https://developer.apple.com/videos/play/wwdc2024/10073/) where they go through the accessibility elements provided by SwiftUI, and how they can be customized!
+
+### Teddy's comments
+SwiftUI creates accessibility elements per VIEW, which is awesome but it can also be too much. An Accessibility Element has three things: Label, Traits and Actions. If we have our own customized View (which is very normal, e.g. a VStack or HStack) then we can add an Accessibility modifier, e.g. `.accessibilityElement(children: .combine)` (this specific one will add all underlying accessibility elements to ONE. AWESOME). An update to the `.accessibilityLabel()` is the argument `isEnabled:` - here it applies the accessibility label only when it is enabled (a boolean variable is true). This keeps the original accessibility label (if it is good enough) and add a new one only when we need it. On macOS, the `.accesibilityLabel()` now handles View too! It can extract the text from the view (don't know how it will handle different type of views!). This gives additional info to the VoiceOver feature - at least for hover! New accessibility modifier: `.accessibilityDropPoint()` - helps the user drag and drop.
+Good note: Always try how the views are working with accessibility tools available in the OS, such as VoiceOver.
+
+This video is a must watch if you're interested in making an app accessible.
+
+
 ## Meet Swift Testing
 ['Meet Swift Testing' session](https://developer.apple.com/videos/play/wwdc2024/10179/) where they talk about the new testing for Swift! 
 
